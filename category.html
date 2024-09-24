@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinDoc</title>
+    <style>
+    /* General Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f0f4f3;
+    line-height: 1.6;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #4caf50;
+    color: white;
+}
+
+.logo h1 {
+    font-size: 24px;
+    color: white;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+}
+
+.nav-links li {
+    margin-right: 20px;
+}
+
+.nav-links li a {
+    text-decoration: none;
+    color: white;
+    font-size: 16px;
+}
+
+/* Hero Section */
+.hero {
+    background-color: #eef6e5;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.hero-content h2 {
+    font-size: 36px;
+    color: #333;
+}
+
+.hero-content p {
+    margin-top: 20px;
+    font-size: 18px;
+    color: #666;
+}
+
+.hero-btn {
+    margin-top: 20px;
+    padding: 10px 20px;
+    background-color: #4caf50;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+}
+
+.hero-btn:hover {
+    background-color: #45a049;
+}
+
+/* Sections */
+.section {
+    padding: 40px 20px;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.section-header h3 {
+    font-size: 24px;
+    color: #333;
+}
+
+.view-all {
+    text-decoration: none;
+    color: #4caf50;
+    font-size: 14px;
+}
+
+.category-cards, .popular-doctors {
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+}
+
+.category-card, .doctor-card {
+    background-color: #fff;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    flex: 1;
+    text-decoration: none;
+    color: #333;
+}
+
+.category-card:hover, .doctor-card:hover {
+    background-color: #f0f8e2;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.category-card img, .doctor-card img {
+    width: 100px;
+    height: 100px;
+    object-fit: cover;
+    border-radius: 50%;
+}
+
+/* Feature Doctor Section */
+.feature-doctor {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    text-decoration: none;
+}
+
+.feature-info {
+    flex-grow: 1;
+    margin-left: 20px;
+}
+
+.feature-info h4 {
+    font-size: 20px;
+    color: #333;
+}
+
+.feature-info p {
+    font-size: 14px;
+    color: #888;
+}
+
+.rating {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    color: #4caf50;
+}
+
+.heart img {
+    width: 30px;
+    cursor: pointer;
+}
+
+/* Footer */
+.footer {
+    background-color: #333;
+    color: white;
+    padding: 20px 0;
+    text-align: center;
+}
+
+.footer-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    padding: 0 20px;
+}
+
+.footer-nav a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+.footer-nav a:hover {
+    text-decoration: underline;
+}
+
+/* Category Section */
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding: 40px 20px;
+    justify-items: center;
+}
+
+.category-item {
+    background-color: #e3f7ce;
+    border-radius: 10px;
+    padding: 50px;
+    text-align: center;
+    width:300px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.category-item:hover {
+    background-color: #b4e1a3;
+}
+
+.category-item img {
+    width: 200px;
+    height: auto;
+}
+
+.category-item p {
+    margin: 10px 0 0;
+    font-size: 16px;
+    font-weight: bold;
+}
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="logo">
+            <h1>FinDoc</h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="map.html">Map</a></li>
+                <li><a href="rehabilation.html">Rehabilitation</a></li>
+                <li><a href="Contact us.html">Contact</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Your Health, Our Priority</h2>
+            <p>Find the best doctors and book an appointment easily with DoctorAppoint.</p>
+        </div>
+    </section>
+
+    <!-- Category Section -->
+    <section class="category-grid">
+        <div class="category-item">
+            <img src="Assets/cardiologist.png" alt="Cardiologist">
+            <p>Cardiologist</p>
+        </div>
+        <div class="category-item">
+            <img src="Assets/pedetritions.png" alt="Pediatricians">
+            <p>Pediatricians</p>
+        </div>
+        <div class="category-item">
+            <img src="Assets/pharmist.png" alt="Pharmacist">
+            <p>Pharmacist</p>
+        </div>
+        <div class="category-item">
+            <img src="Assets/dermatologist.png" alt="Dermatologists">
+            <p>Dermatologists</p>
+        </div>
+        <div class="category-item">
+            <img src="Assets/gyeconologist.png" alt="Gynecologists">
+            <p>Gynecologists</p>
+        </div>
+        <div class="category-item">
+            <img src="Assets/ENT.png" alt="ENT Specialist">
+            <p>ENT Specialist</p>
+        </div>
+        <div class="category-item">
+            <img src="Assets/oncologist.png" alt="Oncologists">
+            <p>Oncologists</p>
+        </div>
+        <div class="category-item">
+            <img src="Assets/nephro.png" alt="Nephrologist">
+            <p>Nephrologist</p>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 FinDoc.</p>
+            <nav class="footer-nav">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </nav>
+        </div>
+    </footer>
+
+</body>
+</html>

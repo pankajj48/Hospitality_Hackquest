@@ -1,0 +1,239 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #f0f4f3;
+}
+
+/* Container */
+.container {
+    width: 100%;
+    max-width: 400px;
+    padding: 20px;
+}
+
+/* Login Box Styles */
+.login-box {
+    background-color: #eef6e5;
+    border-radius: 10px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    text-align: center;
+}
+
+.loginimg img {
+    width: 300px;
+    height: auto;
+}
+
+.logintext {
+    background-color: #ffffff;
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+    font-weight: bold;
+    padding: 5px 5px 0 5px;
+}
+
+/* Back Arrow Styles */
+.back-arrow {
+    text-align: left;
+}
+
+.back-arrow img {
+    width: 20px;
+    cursor: pointer;
+}
+
+/* Typography */
+h2 {
+    margin-bottom: 10px;
+    color: #333333;
+    font-size: 24px;
+}
+
+p {
+    color: #4caf50;
+    margin-bottom: 20px;
+}
+
+/* Form Styles */
+form {
+    margin-bottom: 20px;
+}
+
+.input-group {
+    display: flex;
+    align-items: center;
+    border: 1px solid #d4d4d4;
+    border-radius: 5px;
+    margin-bottom: 15px;
+    padding: 10px;
+    background-color: #f9f9f9;
+}
+
+.input-group img {
+    width: 20px;
+    margin-right: 10px;
+}
+
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    border: none;
+    outline: none;
+    background-color: transparent;
+}
+
+/* Remember me and Forgot password */
+.remember {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+button {
+    width: 100%;
+    padding: 15px;
+    background-color: #4caf50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button:hover {
+    background-color: #45a049;
+}
+
+/* Link Styles */
+.forgot {
+    font-size: 14px;
+    color: #999999;
+    text-decoration: none;
+}
+
+.signup {
+    color: #333333;
+}
+
+.signup a {
+    color: #4caf50;
+    text-decoration: none;
+}
+
+/* Header Section */
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10px 0;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.header h2 {
+    font-size: 24px;
+    color: #333;
+}
+
+/* Category and Popular Doctor Sections */
+.section {
+    margin: 20px 0;
+}
+
+.section-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.section-header h3 {
+    font-size: 18px;
+    color: #333;
+}
+
+.view-all {
+    color: #4caf50;
+    text-decoration: none;
+    font-size: 14px;
+}
+
+.category-cards, .popular-doctors {
+    display: flex;
+    gap: 10px;
+}
+
+.category-card, .doctor-card {
+    flex: 1;
+    text-align: center;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.category-card img, .doctor-card img {
+    width: 100%;
+    border-radius: 8px;
+}
+
+.category-card p, .doctor-card p {
+    margin-top: 5px;
+    color: #333;
+    font-size: 14px;
+}
+
+/* Featured Doctor Section */
+.feature-doctor {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    border-radius: 10px;
+    padding: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.feature-doctor img {
+    width: 80px;
+    border-radius: 8px;
+}
+
+.feature-info {
+    flex-grow: 1;
+    margin-left: 10px;
+}
+
+.feature-info h4 {
+    font-size: 16px;
+    color: #333;
+    margin-bottom: 5px;
+}
+
+.feature-info p {
+    font-size: 12px;
+    color: #888;
+}
+
+.rating {
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    color: #4caf50;
+}
+
+.heart img {
+    width: 20px;
+}

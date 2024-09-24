@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinDoc</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <div class="login-box">
+            <div class="logintext">
+                <h2>Sign In</h2>
+            </div>
+          
+            <div class="loginimg">
+                <img src="Assets/Screenshot 2024-09-21 211648.png" alt="image">
+            </div>
+            <!-- Adding the form with correct IDs and onsubmit attribute -->
+            <form onsubmit="login(); return false;">
+                <div class="input-group">
+                    <img src="Assets/email login.png" alt="Email">
+                    <input type="email" id="userName" placeholder="Your Email" required>
+                </div>
+                <div class="input-group">
+                    <img src="Assets/hidepassword.png" alt="Password">
+                    <input type="password" id="userPassword" placeholder="Password" required>
+                </div>
+                <div class="remember">
+                    <input type="checkbox" id="rememberMe" checked>
+                    <label for="rememberMe">Remember me</label>
+                    <a href="#" class="forgot">Forget password?</a>
+                </div>
+                <button type="submit">Sign in!</button>
+            </form>
+
+            <p class="signup">Already have an account? <a href="#">Sign up!</a></p>
+        </div>
+    </div>
+    
+
+    <script>
+        function login() {
+            let userName = document.getElementById('userName').value;
+            let userPassword = document.getElementById('userPassword').value;
+
+            if (userName === '' || userPassword === '') {
+                alert('Please enter both username and password.');
+            } else {
+                // Redirect to Home.html after successful login
+                window.location.href = 'Home.html';
+            }
+        }
+    </script>
+</body>
+</html>

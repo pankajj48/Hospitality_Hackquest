@@ -1,0 +1,348 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinDoc</title>
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f0f4f3;
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #4caf50;
+            color: white;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-right: 20px;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background-color: #eef6e5;
+            padding: 50px 0;
+            text-align: center;
+        }
+
+        .hero-content h2 {
+            font-size: 36px;
+            color: #333;
+        }
+
+        .hero-content p {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #666;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 40px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+        }
+
+        /* Search Bar */
+        .search-bar {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 25px;
+            font-size: 16px;
+            margin-bottom: 30px;
+        }
+
+        /* Tabs */
+        .tabs {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .tab {
+            padding: 15px;
+            border-radius: 30px;
+            font-size: 18px;
+            background-color: #eef6e5;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        .tab.active, .tab:hover {
+            background-color: #4caf50;
+            color: white;
+        }
+
+        /* Activity List */
+        .activity-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            grid-gap: 20px;
+            margin-bottom: 40px;
+        }
+
+        .activity-item {
+            display: flex;
+            align-items: center;
+            background-color: #eef6e5;
+            padding: 15px;
+            border-radius: 15px;
+            transition: transform 0.2s;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .activity-item:hover {
+            transform: scale(1.05);
+        }
+
+        .activity-item img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            margin-right: 15px;
+        }
+
+        .activity-item .details h4 {
+            font-size: 20px;
+            color: #333;
+            margin-bottom: 10px;
+        }
+
+        .activity-item .details p {
+            font-size: 14px;
+            color: #666;
+        }
+
+        /* Personalized Recovery Plans */
+        .personalized-section {
+            text-align: center;
+            margin-top: 50px;
+        }
+
+        .personalized-section button {
+            background-color: #4caf50;
+            color: white;
+            border: none;
+            padding: 12px 25px;
+            border-radius: 30px;
+            font-size: 16px;
+            margin-bottom: 30px;
+            cursor: pointer;
+        }
+
+        .personalized-section .progress-circle {
+            width: 100px;
+            height: 100px;
+            border-radius: 50%;
+            background-color: #eef6e5;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 24px;
+            color: #4caf50;
+            margin: auto;
+        }
+
+        .personalized-section .progress-text {
+            margin-top: 10px;
+            color: #666;
+            font-size: 14px;
+        }
+
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 0 20px;
+        }
+
+        .footer-nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .footer-nav a:hover {
+            text-decoration: underline;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .activity-item {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .activity-item img {
+                margin: 0 0 10px 0;
+            }
+
+            .activity-item .details h4 {
+                font-size: 18px;
+            }
+
+            .tabs {
+                flex-direction: column;
+            }
+
+            .tab {
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="logo">
+            <h1>FinDoc</h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="map.html">Map</a></li>
+                <li><a href="rehabilation.html">Rehabilitation</a></li>
+                <li><a href="Contact us.html">Contact</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Activity-Based Rehabilitation Programs</h2>
+            <p>Engage in therapeutic activities for emotional and physical well-being.</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Search Bar -->
+        <input type="text" class="search-bar" placeholder="Search activities..." oninput="searchActivities()">
+
+        <!-- Tabs -->
+        <div class="tabs">
+            <div class="tab active" onclick="switchTab('art')">Art Therapy</div>
+            <div class="tab" onclick="switchTab('music')">Music Therapy</div>
+            <div class="tab" onclick="switchTab('yoga')">Yoga</div>
+        </div>
+
+        <!-- Activity List -->
+        <div class="activity-list" id="activityList">
+            <div class="activity-item" data-category="art">
+                <img src="Assets/art.png" alt="Art Therapy">
+                <div class="details">
+                    <h4>Art Therapy</h4>
+                    <p>Engage in creative expression to improve emotional well-being.</p>
+                </div>
+            </div>
+
+            <div class="activity-item" data-category="music">
+                <img src="Assets/music.png" alt="Music Therapy">
+                <div class="details">
+                    <h4>Music Therapy</h4>
+                    <p>Engage in creative expression to improve emotional well-being.</p>
+                </div>
+            </div>
+
+            <div class="activity-item" data-category="yoga">
+                <img src="Assets/yoga.png" alt="Yoga">
+                <div class="details">
+                    <h4>Yoga</h4>
+                    <p>Engage in creative expression to improve emotional well-being.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Personalized Recovery Plans -->
+        <div class="personalized-section">
+            <button onclick="createNewPlan()">Create New Plan</button>
+
+            <div class="progress-circle" id="progressCircle">
+                91%
+            </div>
+            <div class="progress-text">Progress</div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 FinDoc.</p>
+            <nav class="footer-nav">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script>
+        // Switch Tab Function
+        function switchTab(tab) {
+            // Remove 'active' class from all tabs
+            document.querySelectorAll('.tab').forEach(tabElement => {
+                tabElement.classList.remove('active');
+            });
+
+            // Add 'active' class to the clicked tab
+            document.querySelectorAll('.tab').forEach(tabElement => {
+                if (tabElement.textContent.includes(tab.charAt(0).toUpperCase() + tab.slice(1))) {
+                    tabElement.classList.add('active');
+                }
+            });
+
+            // Show relevant activities
+            document.querySelectorAll('.activity-item').forEach(activity => {
+                activity.style.display = activity.dataset.category === tab ? 'flex' : 'none';
+            });
+        }
+    </script>
+
+</body>
+</html>

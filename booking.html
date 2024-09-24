@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FinDoc</title>
+    <link href="https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/main.min.css" rel="stylesheet" />
+    <style>
+        /* General Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+
+        body {
+            background-color: #f0f4f3;
+            line-height: 1.6;
+        }
+
+        /* Navbar */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px;
+            background-color: #4caf50;
+            color: white;
+        }
+
+        .logo h1 {
+            font-size: 24px;
+            color: white;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+        }
+
+        .nav-links li {
+            margin-right: 20px;
+        }
+
+        .nav-links li a {
+            text-decoration: none;
+            color: white;
+            font-size: 16px;
+        }
+
+        .cta button {
+            background-color: white;
+            color: #4caf50;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .cta button:hover {
+            background-color: #45a049;
+            color: white;
+        }
+
+        /* Booking Section */
+        .booking-page {
+            max-width: 500px;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: #eef6e5;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .section-header {
+            background-color: #4caf50;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            font-size: 18px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+        }
+        .reminder-section {
+        margin-top: 20px;
+    }
+
+    .reminder-section h3 {
+        background-color: #4caf50;
+        color: white;
+        padding: 10px;
+        border-radius: 10px;
+        margin-bottom: 10px;
+        text-align: center;
+    }
+
+    .reminder-options {
+        display: flex;
+        justify-content: space-around;
+        margin-top: 10px;
+    }
+
+    .reminder-slot {
+        background-color: #eee;
+        padding: 10px;
+        border-radius: 10px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+    }
+
+    .reminder-slot.selected {
+        background-color: #4caf50;
+        color: white;
+    }
+
+    .reminder-slot:hover {
+        background-color: #d3d3d3;
+    }
+        /* Footer */
+        .footer {
+            background-color: #333;
+            color: white;
+            padding: 20px 0;
+            text-align: center;
+        }
+
+        .footer-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+            padding: 0 20px;
+        }
+
+        .footer-nav a {
+            color: white;
+            text-decoration: none;
+            margin-left: 20px;
+        }
+
+        .footer-nav a:hover {
+            text-decoration: underline;
+        }
+        .booking-btn{
+            background-color: #45a049;
+            text-align: center;
+            width: 50%;
+            margin: 10px;
+            padding: 10px;
+            border-radius: 10px;
+            margin-left: 111px;
+        }
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .booking-page {
+                max-width: 95%;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Navigation Bar -->
+    <header class="navbar">
+        <div class="logo">
+            <h1>FinDoc</h1>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="home.html">Home</a></li>
+                <li><a href="map.html">Map</a></li>
+                <li><a href="rehabilation.html">Rehabilitation</a></li>
+                <li><a href="Contact us.html">Contact</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Booking Section -->
+    <section id="booking">
+        <div class="booking-page">
+            <div class="section-header">
+                <h1>Booking</h1>
+            </div>
+
+            <!-- Calendar -->
+            <div id='calendar'></div>
+
+            <!-- Reminder Section -->
+            <div class="reminder-section">
+                <h3>Reminder Me Before</h3>
+                <div class="reminder-options">
+                    <div class="reminder-slot selected" data-reminder="30">30 Min</div>
+                    <div class="reminder-slot" data-reminder="40">40 Min</div>
+                    <div class="reminder-slot" data-reminder="50">50 Min</div>
+                    <div class="reminder-slot" data-reminder="20">20 Min</div>
+                </div>
+            </div>
+
+            <!-- Booking Button -->
+            <div class="booking-btn">
+                Booking Now
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2024 FinDoc.</p>
+            <nav class="footer-nav">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+            </nav>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src='https://cdn.jsdelivr.net/npm/fullcalendar@5.9.0/main.min.js'></script>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script>
+        // Initialize Google API Client
+        function handleClientLoad() {
+            gapi.load('client:auth2', initClient);
+        }
+
+        function initClient() {
+            gapi.client.init({
+                apiKey: 'YOUR_API_KEY',
+                clientId: 'YOUR_CLIENT_ID',
+                discoveryDocs: ["https://www.googleapis.com/discovery/v1/apis/calendar/v3/rest"],
+                scope: "https://www.googleapis.com/auth/calendar.events"
+            }).then(function () {
+                gapi.auth2.getAuthInstance().isSignedIn.listen(updateSigninStatus);
+                updateSigninStatus(gapi.auth2.getAuthInstance().isSignedIn.get());
+            });
+        }
+
+        function updateSigninStatus(isSignedIn) {
+            if (!isSignedIn) {
+                gapi.auth2.getAuthInstance().signIn();
+            }
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            var calendarEl = document.getElementById('calendar');
+
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                selectable: true,
+                select: function (info) {
+                    const selectedDate = info.startStr;
+                    const selectedReminder = document.querySelector('.reminder-slot.selected').dataset.reminder;
+                    const event = {
+                        'summary': 'Doctor Appointment',
+                        'start': {
+                            'dateTime': selectedDate + 'T10:30:00', // Example time
+                            'timeZone': 'America/Los_Angeles' // Change this to your timezone
+                        },
+                        'end': {
+                            'dateTime': selectedDate + 'T11:30:00', // Example time
+                            'timeZone': 'America/Los_Angeles'
+                        },
+                        'reminders': {
+                            'useDefault': false,
+                            'overrides': [
+                                {'method': 'email', 'minutes': parseInt(selectedReminder)},
+                                {'method': 'popup', 'minutes': parseInt(selectedReminder)}
+                            ]
+                        }
+                    };
+
+                    // Book the appointment (insert into Google Calendar)
+                    gapi.client.calendar.events.insert({
+                        'calendarId': 'primary',
+                        'resource': event
+                    }).then(function(response) {
+                        alert(`Booking confirmed for ${selectedDate}. Reminder set for ${selectedReminder} minutes before.`);
+                    }).catch(function(error) {
+                        console.error("Error creating event: ", error);
+                        alert("There was an error creating your appointment.");
+                    });
+                },
+            });
+
+            calendar.render();
+        });
+
+        // Handle Reminder Selection
+        const reminderSlots = document.querySelectorAll('.reminder-slot');
+        reminderSlots.forEach(slot => {
+            slot.addEventListener('click', function () {
+                document.querySelector('.reminder-slot.selected').classList.remove('selected');
+                this.classList.add('selected');
+            });
+        });
+
+        handleClientLoad();
+    </script>
+</body>
+</html>
